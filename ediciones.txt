@@ -1,0 +1,154 @@
+Doc Editados:
+---EDITE---- 01-07-2021
+-repuestos.php (el filtrado de los repuestos para que no se repitan en agregar repuesto)
+-sql.php (el filtrado de los repuestos para que no se repitan en agregar repuesto)
+
+EL BACK ES (esta en el sist online)
+repuestos0107.php
+sql0107.php
+------------------------------------------------------------------------------------
+
+
+-conAc.php
+-repuestos.php
+-reparacion_informes.php
+-reparacion_
+-	tablaReparaciones.php
+-	tabla_Maquinas.php
+-	verPorMaquinas.php
+-	verPorMaquinasDatos.php	
+-	tabla_Marcas.php
+-	tabla_MarcasDatos.php
+-	tabla_Repuestos.php
+-	add_marcaMaquina.php
+-	add_modeloMaquina.php
+-	despieces.php
+-	edit_modeloMaquina.php
+-	add_repuestoMaquina.php
+-	edit_repuestoMaquina.php
+-	tablaClientes.php
+-	reparacion_estadisticas.php
+-conAc_agregarMaquina.php
+
+
+
+
+
+------------------------------------------------------------------------------------
+Doc Creados:
+------15/07/2021
+-cotizacionReparacionME.php
+
+
+------------------------------------------------------------------------------------
+Tablas editadas:
+------15/06/2021
+-caja_egresos -> añadido despues de 'caja_id' campo 'origen_id'
+-caja_egresos -> añadido despues de 'concepto_adicional' campo 'aclaracion'
+-caja_egresos -> añadido despues de 'moneda_id' campo 'num_factura'
+-caja_egresos -> añadido despues de 'num_factura' campo 'num_remito'
+-caja_egresos -> añadido despues de 'num_remito' campo 'tipo_proveedor'
+-caja_egresos -> añadido despues de 'tipo_proveedor' campo 'proveedor_id'
+-caja_egresos -> añadido despues de 'proveedor_id' campo 'proveedor_adicional'
+
+-caja_conceptos -> añadido registro 'id=12','descripcion=Especificar'
+
+------16/07/2021
+-reparacion_cotizacion -> añadido despues de 'total' campo 'fecha_cotizacion'
+-reparacion_cotizacion -> añadido despues 'fecha_cotizacion' campo 'fecha_ultima_modificacion'
+-reparacion_cotizacion -> añadido despues 'fecha_ultima_modificacion' campo 'fecha_entrega_maquina'
+
+----------------
+------15/07/2021
+ 
+
+------------------------------------------------------------------------------------
+Tablas creadas:
+------15/07/2021
+-reparacion_cotizacion
+-reparacion_cotizacion_base
+
+
+--------------------------
+Carpetas subidas
+
+libs/datatables
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+--
+2021-10-20
+	repararacion_verPorMaquinasDatos.php
+	repuestos.php
+
+--
+2021-10-21
+	repararacion_verPorMaquinasDatos.php
+	repuestos.php
+	conAc_agregarMaquina.php // no perder los datos al refrescar pagina en la carga de nuevo modelo
+
+--
+2021-10-22
+	repararacion_verPorMaquinasDatos.php
+	repuestos.php
+	conAc_agregarMaquina.php // no perder los datos al refrescar pagina en la carga de nuevo modelo
+	proveedorAbmSeleccionado.php // update del precio e iva del proveedor seleccionado para el repuesto
+- COMMIT GITHUB
+	despieces.php
+
+--
+2021-10-27
+	despieces.php
+
+--
+2021-10-28
+	repuestos.php // add iva en cotizaciones
+	clientemaquina // cambio en select condicion_iva eran valores varchar y no int para poder usar en repuestos 
+	cotizacionReparacionME.php
+	pdf_presupuestoME.php
+
+CREADA TABLA
+	iva_condiciones ->
+		id (int), descripcion (varchar)
+
+CAMBIAR en tabla -> clientemaquina:
+							iva: varchar -> int foreign key id(iva_condiciones)
+				 ->	reparacion_cotizacion
+				 			total -> subtotal
+				 	add ->  iva_final (float)		
+				 	add ->  total (float)
+--
+2021-10-29
+	pdf_presupuestosME.php					
+
+
+---------------------------------------------------------
+PENDIENTE DE SUBIR AL SV
+-	reparacion_verPorMaquinasDatos.php
+-	repuestos.php
+-	conAc_agregarMaquina.php
+-	proveedorAbmSeleccionado.php
+-	despieces.php
+-	clientemaquina.php
+-	cotizacionReparacionME.php
+-	pdf_presupuestoME.php
+
+ALTER TABLE
+	->	reparacion_cotizacion
+ 			total -> subtotal
+ 	add ->  iva_final (double)		
+ 	add ->  total (double)
+
+ 	-> clientemaquina
+ 		iva: varchar -> int foreign key id(iva_condiciones)	
+
+CREAR TABLA
+	iva_condiciones ->
+		id, descripcion
+---------------------------------------------------------
+
+--------------- SUBIDO AL SERVER EL DIA 2021-10-29 ------------------
+
+--
+2021-10-29
+	pdf_presupuestoME.php
+	repuestos.php
